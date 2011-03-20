@@ -1,8 +1,8 @@
 (ns deepconv.core)
 
 (deftype Conversion [can-convert? convert])
-(defn can-convert? [conversion value] ((.can-convert? conversion) value))
-(defn convert [conversion value others] ((.convert conversion) value others))
+(defn- can-convert? [conversion value] ((.can-convert? conversion) value))
+(defn- convert [conversion value others] ((.convert conversion) value others))
 
 (defn make-converter [& conversions]
   (fn conv [value]
