@@ -1,3 +1,3 @@
-(defproject deepconv "1.0.0-SNAPSHOT"
-  :description "FIXME: write description"
+(defproject deepconv "0.1.0"
+  :description "Generic conversion for values"
   :dependencies [[org.clojure/clojure "1.2.0"]])
