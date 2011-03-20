@@ -49,7 +49,7 @@
   list-conversion
   (Conversion. list?
                (fn [v o]
-                 (list* (map o v)))))
+                 (apply list (map o v)))))
 
 (def ^{:doc "Returns a conversion for maps. All elements are converted by
             other conversions, a map is returned"}
@@ -61,3 +61,16 @@
                      (assoc res (o k) (o v)))
                    {}
                    v))))
+
+(def ^{:doc "Returns a conversion for sequences. All elements are converted by
+            other conversions, a seq is returned"}
+  seq-conversion
+  (Conversion. seq?
+               (fn [v o]
+                 (map o v))))
+
+(def ^{:doc "Returns all conversions for list, vector, map and seq in the
+            correct order"}
+  sequence-conversions
+  [map-conversion vector-conversion list-conversion seq-conversion])
+
