@@ -9,6 +9,6 @@ you were looking for.
 
 ## License
 
-Copyright (C) 2011
+Copyright (C) Sebastián Bernardo Galkin, 2011
 
 Distributed under the Eclipse Public License, the same as Clojure.
